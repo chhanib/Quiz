@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;'However' Usage Quiz&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.question {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;'However' Usage Quiz&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Is the use of 'however' correct in the following sentences?&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;form id="quizForm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="questions"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button type="button" onclick="checkAnswers()"&gt;Submit&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="result"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const questions = [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Parliamentary elections were held three times over the period analysed – in 2010, 2016, and 2020, however the role of elections was not mentioned as a factor in governmental decision-making for social protection.",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"I would, however, like to stress that universal benefits are the only means of effectively reaching the poorest members of society.",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"The Iraqi government provides in-service training for teachers, however there is no clear indication of the specific training or professional development available for teachers in disability inclusive education.",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"However, the approach taken by UNICEF has resulted in a range of challenges.",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"One parent explained that they were offered treatment overseas by the MoH, however they were unable to accept the offer as they could not afford to pay for passport fees and were therefore unable to travel.",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"There is, however, nothing wrong with the overall design of the system.",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"At the PHC level, surveillance services are also available which can support early diagnosis and access to treatments for the prevention of disabilities, however, this service is limited in its delivery and impact.",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"I do not know whether the Government would, however, be interested in implementing a more inclusive old age pension.",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"In the preceding two decades the Human Development Index (HDI) trended upwards, however the period of 2012-2021 has been marked by more or less stagnant HDI improvements"</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const questionsContainer = document.getElementById('questions');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>questions.forEach((question, index) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const questionHtml = `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="question"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;${index + 1}. ${question}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="radio" name="q${index}" value="correct" id="q${index}c"&gt; &lt;label for="q${index}c"&gt;Correct&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="radio" name="q${index}" value="incorrect" id="q${index}i"&gt; &lt;label for="q${index}i"&gt;Incorrect&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>questionsContainer.innerHTML += questionHtml;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function checkAnswers() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let score = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const totalQuestions = questions.length;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let i = 0; i &lt; totalQuestions; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (selectedAnswer) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// For this example, we'll consider all uses as "incorrect" except for questions 2, 4, and 6</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const correctAnswers = [false, true, false, true, false, true, false, false, false];</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if ((selectedAnswer.value === "correct" &amp;&amp; correctAnswers[i]) ||</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>(selectedAnswer.value === "incorrect" &amp;&amp; !correctAnswers[i])) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>score++;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const resultDiv = document.getElementById('result');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>resultDiv.innerHTML = `You scored ${score} out of ${totalQuestions}.`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
